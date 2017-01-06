@@ -1,13 +1,79 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-		<title>Budget Pig League</title>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Home</title>
+<style id="jsbin-css">
+body{
+  background: #000;
+  padding-top: 10px;
+} 
 
-		<link href="styles.css" rel="stylesheet">
-	</head>
-	<body>
-		<h1>Hi, Yan.</h1>
+p{
+  color: #999; 
+  font-family: Helvetica;
+  font-size: 50px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60em;
+  
+  
+  animation: type 6s steps(120, end); 
+}
 
-		
-	</body>
+p:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+
+p a{
+  color: #999;
+  text-decoration: none;
+}
+
+span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: white;
+}
+</style>
+</head>
+<body>
+  <center><p id="quote"></p><center>
+<script id="jsbin-javascript">
+var quotes=new Array();
+quotes[0] = "Hi, Yan.";
+
+var q = quotes.length;
+var whichquote=Math.round(Math.random()*(q-1));
+
+function showquote(){
+    document.getElementById('quote').innerHTML = quotes[whichquote];
+    document.getElementsByTagName('img')[whichquote].style.display="block";
+}
+showquote();
+</script>
+</body>
 </html>
